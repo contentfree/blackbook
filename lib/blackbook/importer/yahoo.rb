@@ -48,14 +48,11 @@ class Blackbook::Importer::Yahoo < Blackbook::Importer::PageScraper
     form = page.forms.last
     csv = agent.submit(form, form.buttons[2]) # third button is Yahoo-format CSV
     
-    contact_rows = FasterCSV.parse(csv.body)
-    labels = contact_rows.shift # TODO: Actually use the labels to find the indexes of the data we want
-    contact_rows.collect do |row|
-      next if !row[7].empty? && options[:username] =~ /^#{row[7]}/ # Don't collect self
-      {
-        :name  => "#{row[0]} #{row[2]}".to_s, 
-        :email => (row[4] || "#{row[7]}@yahoo.com") # email is a field in the data, but will be blank for Yahoo users so we create their email address    
-      } 
+    contact_rows = FasterCSV.parse(csv.body, { :headers => true, :header_converters => :symbol }).inject([]) do |result, row|
+      unless !row[:yahoo_id].empty? && options[:username] =~ /^#{row[:yahoo_id]}/
+        result << { :name => [row[:first], row[:last]].join(" "), :email => (row[:email] || "#{row[:yahoo_id]}@yahoo.com") } # Assuming @yahoo.com
+      end
+      result
     end
   end
   
