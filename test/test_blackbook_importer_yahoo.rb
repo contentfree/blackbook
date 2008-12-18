@@ -25,6 +25,7 @@ class TestBlackbookImporterYahoo < Test::Unit::TestCase
     assert_equal false, @importer =~ {:username => 'joe@example.com'}
     assert_equal false, @importer =~ {:username => 'joe'}
     assert_equal true, @importer =~ {:username => 'joe@yahoo.com'}
+    assert_equal true, @importer =~ {:username => 'joe@yahoo.co.uk'}
     assert_equal true, @importer =~ {:username => 'JOE@YAHOO.COM'}
   end
 
