@@ -1,7 +1,7 @@
 --- !ruby/object:Gem::Specification 
 name: blackbook
 version: !ruby/object:Gem::Version 
-  version: 1.0.5
+  version: 1.0.6
 platform: ruby
 authors: 
 - Contentfree
@@ -41,7 +41,7 @@ dependencies:
     requirements: 
     - - ">="
       - !ruby/object:Gem::Version 
-        version: 0.7.0
+        version: 0.9.0
     version: 
 - !ruby/object:Gem::Dependency 
   name: fastercsv
@@ -52,16 +52,6 @@ dependencies:
     - - ">="
       - !ruby/object:Gem::Version 
         version: 1.2.0
-    version: 
-- !ruby/object:Gem::Dependency 
-  name: hoe
-  type: :runtime
-  version_requirement: 
-  version_requirements: !ruby/object:Gem::Requirement 
-    requirements: 
-    - - ">="
-      - !ruby/object:Gem::Version 
-        version: 1.5.0
     version: 
 description: "== DESCRIPTION:  Blackbook automates the nitty-gritty of importing contacts from various services and files and exporting them as VCard, XML, or simple Hash. Utilize those contacts from services like AOL, GMail, Yahoo Mail, Hotmail or CSV to help your social networking site become GIGANTIC overnight! You'll be able to get big and sell for millions before anyone figures out it's just like every other social network."
 email: dave.myron@contentfree.com
@@ -138,7 +128,7 @@ homepage: http://rubyforge.org/projects/contentfree/
 post_install_message: 
 rdoc_options: 
 - --main
-- README.txt
+- README.markdown
 require_paths: 
 - lib
 required_ruby_version: !ruby/object:Gem::Requirement 

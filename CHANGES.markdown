@@ -1,3 +1,11 @@
+== 1.0.6 / 2009-2-18
+
+* Merged in several patches from joshknowles, lee, lukemelia, kieranj, and brynary. 
+* Fixes flows for AOL and Gmail. 
+* Compatible with Mechanize 0.9/Nokogiri
+* Adds live.com as Hotmail provider
+* Adds yahoo.co.uk as Yahoo provider
+
 == 1.0.5 / 2008-11-26
 
 * moved to github
