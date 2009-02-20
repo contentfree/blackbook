@@ -25,7 +25,7 @@ class Blackbook::Importer::Gmail < Blackbook::Importer::PageScraper
     
     raise( Blackbook::BadCredentialsError, "That username and password was not accepted. Please check them and try again." ) if page.body =~ /Username and password do not match/
     
-    if page.search('//meta').first.attributes['content'] =~ /url='?(http.+?)'?$/i
+    if page.search('//meta').first.attributes['content'].inner_text =~ /url='?(http.+?)'?$/i
       page = agent.get $1
     end
   end
