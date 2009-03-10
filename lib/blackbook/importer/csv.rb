@@ -1,5 +1,4 @@
 require 'fastercsv'
-require 'ruby-debug'
 
 ##
 # Imports contacts from a CSV file
